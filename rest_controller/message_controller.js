@@ -21,3 +21,8 @@ const newMessage = async (req, res) => {
             res.status(500).json(error);
         });
 }
+
+module.exprots = {
+    getAllMessages,
+    newMessage
+}
