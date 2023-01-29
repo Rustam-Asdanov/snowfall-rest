@@ -14,5 +14,13 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.8.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rustam-Asdanov/snowfall-rest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rustam-Asdanov/snowfall-rest/issues"
+  },
+  "homepage": "https://github.com/Rustam-Asdanov/snowfall-rest#readme"
 }

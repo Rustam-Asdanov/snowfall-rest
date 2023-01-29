@@ -5,10 +5,12 @@ const getMessageList = async () => {
 }
 
 const newMessage = async (body) => {
+    console.log(body);
 
     const myMessage = new SosMessage({
         message: body["message"],
-        locationData: body["location"]
+        latitude: body["latitude"],
+        longitude: body["longitude"]
     });
 
     const result = await myMessage.save();
