@@ -1,20 +1,21 @@
 const SosMessage = require("../model/SosMessage");
 
-const getMessageList = async ()=>{
-    let message = new Array();
+const getMessageList = async () => {
+    return await SosMessage.find({});
+}
 
-    await SosMessage.find({}).then((result)=>{
-        return result;
+const newMessage = async (body) => {
+
+    const myMessage = new SosMessage({
+        message: body["message"],
+        locationData: body["location"]
     });
+
+    const result = await myMessage.save();
+    return result;
 }
 
-const newMessage = async () => {
-    const msg = await SosMessage.updateOne(
-        
-    )
-}
-
-module.exprots = {
+module.exports = {
     getMessageList,
     newMessage
 }

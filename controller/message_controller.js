@@ -1,28 +1,30 @@
-const { getMessageList, newMessage } = require("../service/");
+const { getMessageList, newMessage } = require("../service/message_service");
 
 const getAllMessages = async (req, res) => {
-    await getMessageList().then((result) => {
-        res.status(200).json(result);
-    })
+    await getMessageList()
+        .then((result) => {
+            res.status(200).json(result);
+        })
         .catch((err) => {
             res.status(500).json(err);
         })
-}
+};
 
-const newMessage = async (req, res) => {
+const createMessage = async (req, res) => {
     const request_body = req.body;
-    const my_message = request_body["message"];
+   
+    console.log(request_body)
 
-    await newMessage(my_message)
+    await newMessage(request_body)
         .then((result) => {
             res.status(201).json(result);
         })
         .catch((error) => {
             res.status(500).json(error);
         });
-}
+};
 
-module.exprots = {
+module.exports = {
     getAllMessages,
-    newMessage
+    createMessage
 }
